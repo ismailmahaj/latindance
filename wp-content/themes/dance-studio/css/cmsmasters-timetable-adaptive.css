@@ -1,0 +1,80 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Dance Studio
+ * @version 	1.2.0
+ * 
+ * Responsive Timetable CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+@media only screen {
+  /*-------------------------------------------------------------------------*/
+  /* Large Monitor
+/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Medium Monitor
+/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Tablet Monitor
+/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Tablet Monitor 950
+/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Small Tablet Monitor
+/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Phone Monitor
+/*-------------------------------------------------------------------------*/
+  /*-------------------------------------------------------------------------*/
+  /* Small Phone Monitor
+/*-------------------------------------------------------------------------*/
+}
+@media only screen and (min-width: 1440px) {
+  .cmsmasters_tt_event {
+    outline: none;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .cmsmasters_tt_event {
+    outline: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .cmsmasters_tt_event {
+    outline: none;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .cmsmasters_tt_event .cmsmasters_tt_event_content_wrap.with_sidebar {
+    width: 100%;
+    float: none;
+    clear: both;
+    padding-right: 0;
+    padding-bottom: 25px;
+  }
+  .cmsmasters_tt_event .cmsmasters_tt_event_sidebar {
+    width: 100%;
+    float: none;
+    clear: both;
+    padding-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .tt_timetable {
+    display: none;
+  }
+  div.tt_timetable.small {
+    display: block;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .cmsmasters_tt_event {
+    outline: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .cmsmasters_tt_event {
+    outline: none;
+  }
+}

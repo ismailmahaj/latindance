@@ -1,0 +1,115 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Dance Studio
+ * @version 	1.2.0
+ * 
+ * Responsive Timetable CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+
+
+
+@import "general.less";
+
+@monitor_medium: ~'(min-width: 1024px) and (max-width: 1440px)';
+@tablet_ipad: ~'(min-width: 768px) and (max-width: 1024px)';
+@tablet_small: ~'(min-width: 541px) and (max-width: 767px)';
+
+
+@media only screen {
+/*-------------------------------------------------------------------------*/
+/* Large Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_large {
+	.cmsmasters_tt_event {
+		outline:none;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Medium Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_medium {
+	.cmsmasters_tt_event {
+		outline:none;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Tablet Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet {
+	.cmsmasters_tt_event {
+		outline:none;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Tablet Monitor 950
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet_950 {
+	.cmsmasters_tt_event {
+		.cmsmasters_tt_event_content_wrap {
+			&.with_sidebar {
+				width:100%;
+				float:none;
+				clear:both;
+				padding-right:0;
+				padding-bottom:25px;
+			}
+		}
+		
+		.cmsmasters_tt_event_sidebar {
+			width:100%;
+			float:none;
+			clear:both;
+			padding-bottom:50px;
+		}
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Small Tablet Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_tablet_small {
+	.tt_timetable {
+		.dn;
+	}
+	
+	div.tt_timetable.small {
+		display:block;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Phone Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_phone {
+	.cmsmasters_tt_event {
+		outline:none;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------*/
+/* Small Phone Monitor
+/*-------------------------------------------------------------------------*/
+@media @monitor_phone_small {
+	.cmsmasters_tt_event {
+		outline:none;
+	}
+}
+}
+

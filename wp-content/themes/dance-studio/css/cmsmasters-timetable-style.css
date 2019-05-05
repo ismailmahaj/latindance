@@ -1,0 +1,904 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Dance Studio
+ * @version 	1.2.0
+ * 
+ * Timetable CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+/*-------------------------------------------------------------------------*/
+/* Timetable Filters
+/*-------------------------------------------------------------------------*/
+/* --- dropdown filter --- */
+.tabs_box_navigation {
+  display: block;
+  margin: 0;
+  padding: 0 0 40px;
+  overflow: visible !important;
+  position: relative;
+  z-index: 10;
+  float: left;
+}
+.tabs_box_navigation:last-of-type {
+  padding-right: 0;
+}
+.tabs_box_navigation ul,
+.tabs_box_navigation li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.tabs_box_navigation ul:before,
+.tabs_box_navigation li:before {
+  content: none;
+}
+.tabs_box_navigation .tabs_box_navigation_selected {
+  border: 0 !important;
+  display: inline-block;
+  min-width: 170px;
+  max-width: 100%;
+  position: relative;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.tabs_box_navigation .tabs_box_navigation_selected:before {
+  content: '\e9ce';
+  font-family: "fontello";
+  font-size: 18px;
+  width: 1em;
+  height: 1em;
+  margin: auto !important;
+  position: absolute;
+  left: auto;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+}
+.tabs_box_navigation .tabs_box_navigation_selected:hover {
+  -webkit-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+.tabs_box_navigation .tabs_box_navigation_selected:hover:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.tabs_box_navigation .tabs_box_navigation_selected:hover .sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+.tabs_box_navigation .tabs_box_navigation_selected label {
+  display: block;
+  padding: 10px 40px 10px 20px;
+  cursor: pointer;
+}
+.tabs_box_navigation .tabs_box_navigation_selected .tabs_box_navigation_icon {
+  display: none;
+}
+.tabs_box_navigation .tabs_box_navigation_selected .sub-menu {
+  width: 100%;
+  padding: 10px 0 17px;
+  overflow: visible;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  border-width: 1px;
+  border-style: solid;
+}
+.tabs_box_navigation .tabs_box_navigation_selected .sub-menu li {
+  padding: 3px 20px;
+}
+.tabs_box_navigation .tabs_box_navigation_selected .sub-menu a {
+  display: inline-block;
+}
+/* --- tabs filter --- */
+.tt_tabs_navigation {
+  list-style: none;
+  width: 100%;
+  margin: 0 0 40px;
+  padding: 4px 0 0;
+  float: none;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+}
+.tt_tabs_navigation:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000;
+}
+.tt_tabs_navigation li {
+  margin-left: 2px;
+  padding: 0;
+  float: left;
+}
+.tt_tabs_navigation li:first-child {
+  margin-left: 0;
+}
+.tt_tabs_navigation li:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background: #000;
+}
+.tt_tabs_navigation li > a {
+  display: block;
+  padding: 15px 25px;
+  position: relative;
+  background: transparent;
+}
+.tt_tabs_navigation li > a:before {
+  content: "";
+  width: 1px;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000;
+}
+.tt_tabs_navigation li > a:after {
+  content: "";
+  width: 1px;
+  height: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #000;
+}
+html:not(.touch) .tt_tabs_navigation li:hover:before {
+  width: 100%;
+  left: 0;
+  top: -2px;
+}
+html:not(.touch) .tt_tabs_navigation li:hover a:before {
+  height: 100%;
+}
+html:not(.touch) .tt_tabs_navigation li:hover a:after {
+  height: 100%;
+}
+.tt_tabs_navigation li.ui-tabs-active:before {
+  width: 100%;
+  left: 0;
+  top: -2px;
+}
+.tt_tabs_navigation li.ui-tabs-active a:before {
+  height: 100%;
+}
+.tt_tabs_navigation li.ui-tabs-active a:after {
+  height: 100%;
+}
+/*-------------------------------------------------------------------------*/
+/* Timetable Page
+/*-------------------------------------------------------------------------*/
+.cmsmasters_timetable_shortcode {
+  position: relative;
+}
+.cmsmasters_timetable_shortcode:after {
+  content: '.';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.timetable_clearfix:after {
+  font-size: 0px;
+  content: ".";
+  display: block;
+  height: 0px;
+  visibility: hidden;
+  clear: both;
+}
+.tt_booking_overlay,
+.tt_hide {
+  display: none;
+}
+/* --- lists --- */
+.tt_tabs {
+  border: none !important;
+}
+.tt_tabs .ui-tabs-panel {
+  padding: 0 !important;
+  clear: both;
+}
+/* --- timetable --- */
+table.tt_timetable {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+table.tt_timetable + .small {
+  display: none;
+}
+table.tt_timetable th,
+table.tt_timetable td {
+  border: none;
+}
+table.tt_timetable th,
+table.tt_timetable td.tt_hours_column {
+  text-align: center;
+  vertical-align: middle;
+}
+table.tt_timetable th {
+  width: 12.5%;
+  padding: 10px 15px 12px;
+}
+table.tt_timetable .event_container {
+  padding: 15px 15px 12px;
+}
+table.tt_timetable .event_container + .event_hour_booking_wrapper {
+  padding: 0 15px 12px;
+}
+table.tt_timetable td {
+  width: 12.5%;
+  vertical-align: top;
+  height: 31px;
+  border: none;
+  padding: 0;
+}
+table.tt_timetable .event {
+  text-align: center;
+  padding: 0;
+  vertical-align: top;
+}
+table.tt_timetable .event .event_container {
+  border-width: 1px;
+  border-style: solid;
+}
+table.tt_timetable .event.tt_single_event {
+  border-width: 1px;
+  border-style: solid;
+}
+table.tt_timetable .event.tt_single_event .event_container {
+  border-width: 0;
+  border-style: solid;
+}
+table.tt_timetable .event div {
+  text-align: inherit;
+}
+table.tt_timetable .event div.tt_tooltip_content {
+  text-align: inherit;
+}
+.event_layout_3 table.tt_timetable .event {
+  text-align: left;
+}
+.event_layout_3 table.tt_timetable .event .hours_container {
+  padding: 12px 0 10px;
+}
+table.tt_timetable .event a,
+table.tt_timetable .event .event_header {
+  display: block;
+}
+table.tt_timetable .event .hours_container {
+  padding: 17px 0 10px;
+}
+table.tt_timetable .event .top_hour {
+  padding-top: 20px;
+}
+table.tt_timetable .event_hour_booking_wrapper.on_hover {
+  visibility: hidden;
+  opacity: 0;
+}
+table.tt_timetable .event:hover .event_hour_booking_wrapper.on_hover {
+  visibility: visible;
+  opacity: 1;
+}
+table.tt_timetable .event .bottom_hour {
+  padding-bottom: 13px;
+}
+.tt_navigation_cell .tt_generate_pdf {
+  margin-bottom: 20px;
+}
+.tt_navigation_cell .tt_generate_pdf > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.tt_navigation_cell .tt_generate_pdf textarea {
+  display: none;
+}
+.event_layout_4 table.tt_timetable .event .top_hour {
+  padding-top: 13px;
+  padding-bottom: 12px;
+}
+table.tt_timetable .event hr {
+  height: 0;
+  margin: 0;
+  opacity: 0.2;
+  border-width: 0;
+  border-style: solid;
+}
+.tt_timetable.small {
+  padding-top: 30px;
+}
+.tt_timetable.small .available_slots {
+  margin-left: 20px;
+  margin-top: 3px;
+}
+.ui-tooltip.qtip {
+  margin-top: -40px;
+  z-index: 999999 !important;
+}
+/* --- tip/tooltip/qtip --- */
+.tt_tooltip {
+  position: relative;
+}
+.tt_tooltip .tt_tooltip_text {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+  padding-bottom: 15px;
+  visibility: hidden;
+  position: absolute;
+  left: 0 !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 100% !important;
+  z-index: 1000;
+  opacity: 0;
+}
+.tt_tooltip:hover .tt_tooltip_text {
+  visibility: visible;
+  opacity: 1;
+}
+.tt_tooltip .tt_tooltip_content {
+  padding: 10px 15px 15px;
+}
+.tt_tooltip .tt_tooltip_content a {
+  margin-bottom: 5px;
+}
+.tt_tooltip .tt_tooltip_arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: auto !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 10px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-left-width: 5px;
+  border-left-style: solid;
+  border-right-width: 5px;
+  border-right-style: solid;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+}
+/* --- tabs --- */
+.tt-ui-tabs-hide {
+  display: none;
+}
+/* --- Timetable Small --- */
+ul.tt_items_list {
+  list-style: none;
+  padding: 0 0 40px;
+  margin: 0;
+}
+ul.tt_items_list:last-child {
+  padding: 0;
+}
+ul.tt_items_list li {
+  padding: 10px 20px;
+  margin: 10px 0 0;
+  border-width: 1px;
+  border-style: solid;
+}
+ul.tt_items_list li:before {
+  content: none;
+}
+ul.tt_items_list li:first-child {
+  margin-top: 0;
+}
+ul.tt_items_list li a,
+ul.tt_items_list li .available_slots {
+  float: left;
+}
+ul.tt_items_list li .value {
+  float: right;
+}
+ul.tt_items_list li .value .on_hover {
+  margin-right: 15px;
+  float: left;
+}
+.tt_booking_overlay {
+  position: absolute;
+  background-color: rgba(85, 85, 85, 0.2);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999998;
+}
+.tt_booking {
+  width: 500px;
+  margin: 0 50px;
+  position: absolute;
+  z-index: 999999;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+.tt_booking.in_iframe {
+  margin: 0 auto;
+}
+.tt_booking:empty {
+  display: none;
+}
+.tt_booking > div {
+  text-align: center;
+}
+.tt_booking .tt_booking_form {
+  padding: 30px 10px 0;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) {
+  padding-bottom: 15px;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) label {
+  display: block;
+  padding: 0 0 5px;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) textarea {
+  width: 100%;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) input:not([type=button]):not([type=checkbox]):not([type=file]):not([type=hidden]):not([type=image]):not([type=radio]):not([type=reset]):not([type=submit]):not([type=color]):not([type=range]) {
+  width: 100%;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) .tt_slots_number {
+  height: auto !important;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) .tt_slots_number_wrapper {
+  text-align: center;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) .tt_slots_number_wrapper > input {
+  line-height: 22px;
+  height: 26px;
+  vertical-align: middle;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) .tt_slots_number_wrapper > input[type="button"] {
+  padding: 0 25px;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper:not(.terms_checkbox_wrapper) .tt_slots_number_wrapper > input[type="number"] {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper.terms_checkbox_wrapper > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.tt_booking .tt_booking_form .tt_field_wrapper.terms_checkbox_wrapper > *.tt_field.tt_terms_checkbox {
+  margin-right: 5px;
+}
+.tt_booking .tt_booking_message {
+  margin: 40px 20px;
+}
+.tt_booking .tt_booking_message p {
+  margin: 33px 10px 0;
+  padding: 0;
+}
+.tt_booking .tt_booking_message > div {
+  margin: 20px 10px 0;
+}
+.tt_booking .tt_booking_message > div .tt_btn {
+  display: inline-block;
+  text-transform: uppercase !important;
+  padding: 9px 25px;
+  border-color: transparent;
+  transform: none;
+  border-width: 0;
+  border-style: solid;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tt_booking .tt_booking_message > div .tt_btn.book {
+  margin-right: 20px;
+}
+.tt_booking .tt_booking_message > div .tt_btn.login {
+  margin: 0 20px 0 0;
+  vertical-align: bottom;
+}
+.tt_booking .event_details_wrapper {
+  padding: 14px 13px 15px;
+  margin: 0 10px;
+  border-width: 1px;
+  border-style: solid;
+}
+.tt_booking .tt_btn_wrapper {
+  margin-top: 35px;
+}
+.tt_booking .tt_btn_wrapper .tt_btn {
+  display: inline-block;
+  text-transform: uppercase !important;
+  padding: 9px 25px;
+  border-color: transparent;
+  transform: none;
+  border-width: 0;
+  border-style: solid;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tt_booking .tt_preloader {
+  margin: 50px auto 50px;
+  width: 70px;
+  text-align: center;
+}
+.tt_booking .tt_preloader > div {
+  display: inline-block;
+  background-color: #E5E5E5;
+  width: 18px;
+  height: 18px;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+.tt_booking .tt_preloader .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.tt_booking .tt_preloader .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.tt_booking .tt_hide {
+  display: none !important;
+}
+/*-------------------------------------------------------------------------*/
+/* Timetable Post
+/*-------------------------------------------------------------------------*/
+.cmsmasters_tt_single_event {
+  position: relative;
+}
+.cmsmasters_tt_event {
+  padding: 60px 0 0;
+  position: relative;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_header {
+  margin-top: -35px;
+  padding: 0 0 15px;
+  overflow: hidden;
+  clear: both;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_header .cmsmasters_tt_event_subtitle {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_content_wrap {
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_content_wrap.with_sidebar {
+  width: 74%;
+  padding-right: 40px;
+  float: left;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_content_wrap > figure {
+  margin-bottom: 35px;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_sidebar {
+  width: 26%;
+  float: left;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_sidebar > div {
+  padding: 0 0 40px;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours {
+  position: relative;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_title {
+  margin: 0;
+  padding: 0 0 25px;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item {
+  padding: 9px 0;
+  position: relative;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item > div {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item .cmsmasters_tt_event_hours_item_title {
+  padding-right: 15px;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item .cmsmasters_tt_event_hours_item_values {
+  word-wrap: break-word;
+  text-align: right;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item .cmsmasters_tt_event_hours_item_values .cmsmasters_tt_event_hours_item_value {
+  display: block;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_details {
+  position: relative;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_title {
+  margin: 0;
+  padding: 0 0 25px;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item {
+  padding: 9px 0;
+  position: relative;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item > div {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item .cmsmasters_tt_event_details_item_title {
+  padding-right: 15px;
+}
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item .cmsmasters_tt_event_details_item_desc {
+  word-wrap: break-word;
+  text-align: right;
+}
+/*-------------------------------------------------------------------------*/
+/* Timetable Upcoming Events
+/*-------------------------------------------------------------------------*/
+.tt_upcoming_events_widget {
+  position: relative;
+  overflow: hidden;
+}
+.tt_upcoming_events_wrapper {
+  width: 100%;
+  clear: both;
+}
+.tt_upcoming_events_wrapper .caroufredsel_wrapper {
+  width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls {
+  display: block;
+  margin: 0 -2px;
+  position: relative;
+  overflow: hidden;
+}
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a {
+  display: block !important;
+  width: 28px;
+  height: 28px;
+  margin: 4px 2px 0;
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  float: left;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a:before {
+  font-family: "fontello";
+  font-size: 16px;
+  width: 1em;
+  height: 1em;
+  margin: auto !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  bottom: 0;
+  text-align: center;
+}
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a#upcoming_event_prev:before {
+  content: '\e9d1';
+}
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a#upcoming_event_next:before {
+  content: '\e9ce';
+}
+ul.tt_upcoming_events {
+  width: 100% !important;
+  padding: 0;
+  margin: 0;
+}
+ul.tt_upcoming_events li {
+  padding: 0 0 6px;
+  margin: 0;
+}
+ul.tt_upcoming_events li:before {
+  content: none;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container {
+  display: block;
+  padding: 15px 45px 15px 20px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container:before {
+  content: '\e9ce';
+  font-family: "fontello";
+  font-size: 18px;
+  width: 1em;
+  height: 1em;
+  margin: auto !important;
+  position: absolute;
+  left: auto;
+  right: 15px;
+  top: 20px;
+  bottom: auto;
+  text-align: center;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container:hover:before {
+  content: '\e9d1';
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container:hover .tt_event_hours_description,
+ul.tt_upcoming_events li .tt_upcoming_events_event_container:hover img.wp-post-image {
+  display: block;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container .tt_upcoming_events_arrow {
+  display: none;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container .tt_upcoming_events_hours {
+  display: block;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container .tt_event_hours_description {
+  padding: 13px 0 0;
+  display: none;
+}
+ul.tt_upcoming_events li .tt_upcoming_events_event_container img.wp-post-image {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  display: none;
+}
+/*-------------------------------------------------------------------------*/
+/* CSS3 Animations
+/*-------------------------------------------------------------------------*/
+html.csstransitions .tabs_box_navigation .tabs_box_navigation_selected {
+  -webkit-transition: border-radius .3s ease-in-out;
+  -moz-transition: border-radius .3s ease-in-out;
+  -ms-transition: border-radius .3s ease-in-out;
+  -o-transition: border-radius .3s ease-in-out;
+  transition: border-radius .3s ease-in-out;
+}
+html.csstransitions .tabs_box_navigation .tabs_box_navigation_selected:before {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+html.csstransitions .tabs_box_navigation .tabs_box_navigation_selected .sub-menu,
+html.csstransitions .tt_timetable.small .tt_items_list li .on_hover,
+html.csstransitions table.tt_timetable .tt_tooltip .tt_tooltip_text,
+html.csstransitions table.tt_timetable .event_hour_booking_wrapper.on_hover {
+  -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+html.csstransitions table.tt_timetable .tt_tooltip:hover .tt_tooltip_text {
+  -webkit-transition: opacity .3s ease-in-out .2s, visibility .3s ease-in-out .2s;
+  -moz-transition: opacity .3s ease-in-out .2s, visibility .3s ease-in-out .2s;
+  -ms-transition: opacity .3s ease-in-out .2s, visibility .3s ease-in-out .2s;
+  -o-transition: opacity .3s ease-in-out .2s, visibility .3s ease-in-out .2s;
+  transition: opacity .3s ease-in-out .2s, visibility .3s ease-in-out .2s;
+}
+html.csstransitions table.tt_timetable .event_container,
+html.csstransitions table.tt_timetable .tt_single_event,
+html.csstransitions .tt_booking .tt_booking_message > div .tt_btn,
+html.csstransitions .cmsmasters_timetable_shortcode .tabs_box_navigation .tabs_box_navigation_selected {
+  -webkit-transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+html.csstransitions .tt_timetable.small .tt_items_list li {
+  -webkit-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+html.csstransitions .tt_timetable.small .tt_items_list li *,
+html.csstransitions table.tt_timetable .event_container *,
+html.csstransitions .tt_tabs_navigation li a,
+html.csstransitions .tt_upcoming_events_wrapper .tt_upcoming_event_controls > a:before {
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+html.csstransitions table.tt_timetable .event_container a,
+html.csstransitions table.tt_timetable .tt_single_event a {
+  -webkit-transition: color .3s ease-in-out, opacity .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out, opacity .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out, opacity .3s ease-in-out;
+  -o-transition: color .3s ease-in-out, opacity .3s ease-in-out;
+  transition: color .3s ease-in-out, opacity .3s ease-in-out;
+}
+html.csstransitions .tt_upcoming_events_wrapper .tt_upcoming_event_controls > a {
+  -webkit-transition: border-color .3s ease-in-out, background .3s ease-in-out;
+  -moz-transition: border-color .3s ease-in-out, background .3s ease-in-out;
+  -ms-transition: border-color .3s ease-in-out, background .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out, background .3s ease-in-out;
+  transition: border-color .3s ease-in-out, background .3s ease-in-out;
+}
+html.csstransitions ul.tt_upcoming_events li .tt_upcoming_events_event_container {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+html.csstransitions .tt_tabs_navigation li:before {
+  -webkit-transition: background-color .4s ease-in-out, width .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out;
+  -moz-transition: background-color .4s ease-in-out, width .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out;
+  -ms-transition: background-color .4s ease-in-out, width .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out;
+  -o-transition: background-color .4s ease-in-out, width .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out;
+  transition: background-color .4s ease-in-out, width .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out;
+}
+html.csstransitions .tt_tabs_navigation li a:before,
+html.csstransitions .tt_tabs_navigation li a:after {
+  -webkit-transition: height .3s ease-in-out;
+  -moz-transition: height .3s ease-in-out;
+  -ms-transition: height .3s ease-in-out;
+  -o-transition: height .3s ease-in-out;
+  transition: height .3s ease-in-out;
+}
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

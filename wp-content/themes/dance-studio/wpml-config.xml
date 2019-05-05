@@ -1,0 +1,19 @@
+<wpml-config>
+    <admin-texts>
+        <key name="cmsmasters_options_dance-studio_style_header">
+            <key name="dance-studio_header_top_line_short_info" />
+        </key>
+        <key name="cmsmasters_options_dance-studio_style_footer">
+            <key name="dance-studio_footer_html" />
+            <key name="dance-studio_footer_copyright" />
+        </key>
+        <key name="cmsmasters_options_dance-studio_single_project">
+            <key name="dance-studio_portfolio_project_details_title" />
+        </key>
+        <key name="cmsmasters_options_dance-studio_single_profile">
+            <key name="dance-studio_profile_post_details_title" />
+        </key>
+    </admin-texts>
+</wpml-config>
+
+

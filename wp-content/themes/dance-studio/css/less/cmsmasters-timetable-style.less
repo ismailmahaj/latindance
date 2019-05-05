@@ -1,0 +1,972 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Dance Studio
+ * @version 	1.2.0
+ * 
+ * Timetable CSS Rules
+ * Created by CMSMasters
+ * 
+ */
+
+
+
+@import "general.less";
+
+@resp_blocks_pad:56.25%;
+
+/*-------------------------------------------------------------------------*/
+/* Timetable Filters
+/*-------------------------------------------------------------------------*/
+
+/* --- dropdown filter --- */
+.tabs_box_navigation {
+	display:block;
+	margin:0;
+	padding:0 0 40px;
+	overflow: visible !important;
+	position:relative;
+	z-index:10;
+	.fl;
+	
+	&:last-of-type {
+		padding-right:0;
+	}
+	
+	ul, 
+	li {
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		
+		&:before {
+			content:none;
+		}
+	}
+	
+	.tabs_box_navigation_selected {
+		border:0 !important;
+		display:inline-block;
+		min-width:170px;
+		max-width:100%;
+		position:relative;
+		.bdrs(3px);
+		
+		&:before {
+			content:'\e9ce';
+			font-family:"fontello";
+			font-size:18px;
+			.pos_abs(1em, 1em, auto, 15px);
+		}
+		
+		&:hover {
+			.bdrs(3px 3px 0 0);
+			
+			&:before {
+				-webkit-transform:rotate(180deg);
+				-moz-transform:rotate(180deg);
+				-ms-transform:rotate(180deg);
+				-o-transform:rotate(180deg);
+				transform:rotate(180deg);
+			}
+			
+			.sub-menu {
+				visibility:visible;
+				.op(1);
+			}
+		}
+		
+		label {
+			display:block;
+			padding:10px 40px 10px 20px;
+			cursor:pointer;
+		}
+		
+		.tabs_box_navigation_icon {
+			.dn;
+		}
+		
+		.sub-menu {
+			width:100%;
+			padding:10px 0 17px;
+			overflow: visible;
+			visibility:hidden;
+			position:absolute;
+			left:0;
+			top:100%;
+			.op(0);
+			.bdrs(0 0 3px 3px);
+			.bd(1px);
+			
+			li {
+				padding:3px 20px;
+			}
+			
+			a {
+				display:inline-block;
+			}
+		}
+	}
+}
+
+/* --- tabs filter --- */
+.tt_tabs_navigation {
+	list-style:none;
+	width:100%;
+	margin:0 0 40px;
+	padding:4px 0 0;
+	float:none;
+	position:relative;
+	.cl;
+	.ovh;
+	
+	&:before {
+		content:'';
+		width:100%;
+		height:1px;
+		position:absolute;
+		bottom:0;
+		left:0;
+		background:#000;
+	}
+	
+	li {
+		margin-left:2px;
+		padding:0;
+		float:left;
+				
+		&:first-child {
+			margin-left:0;
+		}
+		
+		&:before {
+			content:'';
+			display:block;
+			width:0;
+			height:2px;
+			position:absolute;
+			top:0;
+			left:50%;
+			background:#000;
+		}
+		
+		> a {
+			display:block;
+			padding:15px 25px;
+			position:relative;
+			background:transparent;
+			
+			&:before{
+				content:"";
+				width:1px;
+				height:0;
+				position:absolute;
+				left:0;
+				top:0;
+				background:#000;
+			}
+			&:after{
+				content:"";
+				width:1px;
+				height:0;
+				position:absolute;
+				right:0;
+				bottom:0;
+				background:#000;
+			}
+		}
+		
+		&:hover {
+			html:not(.touch) & {
+				&:before {
+					width:100%;
+					left:0;
+					top:-2px;
+				}
+			
+				a {
+					&:before {
+						height:100%;
+					}
+					&:after {
+						height:100%;
+					}
+				}
+			}
+		}
+		
+		&.ui-tabs-active {
+			&:before {
+				width:100%;
+				left:0;
+				top:-2px;
+			}
+			
+			a {
+				&:before {
+					height:100%;
+				}
+				&:after {
+					height:100%;
+				}
+			}
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------------------*/
+/* Timetable Page
+/*-------------------------------------------------------------------------*/
+
+.cmsmasters_timetable_shortcode {
+	position:relative;
+	
+	&:after {
+		.cl_after;
+	}
+}
+
+.timetable_clearfix:after {
+	font-size:0px;
+	content:".";
+	display:block;
+	height:0px;
+	visibility:hidden;
+	clear:both;
+}
+
+.tt_booking_overlay,
+.tt_hide {
+	display:none;
+}
+
+/* --- lists --- */
+.tt_tabs {
+	border:none !important;
+}
+
+.tt_tabs .ui-tabs-panel {
+	padding:0 !important;
+	clear:both;
+}
+
+/* --- timetable --- */
+table.tt_timetable {
+	width:100%;
+	margin:0;
+	padding:0;
+	border:none;
+	border-collapse:separate;
+	border-spacing:2px;
+	
+	+ .small {
+		.dn;
+	}
+}
+
+table.tt_timetable th,
+table.tt_timetable td {
+	border:none;
+}
+
+table.tt_timetable th,
+table.tt_timetable td.tt_hours_column {
+	text-align:center;
+	vertical-align:middle;
+}
+
+table.tt_timetable th {
+	width:12.5%;
+	padding:10px 15px 12px;
+}
+
+table.tt_timetable .event_container {
+	padding:15px 15px 12px;
+	
+	+ .event_hour_booking_wrapper {
+		padding:0 15px 12px;
+	}
+}
+
+table.tt_timetable td {
+	width:12.5%;
+	vertical-align:top;
+	height:31px;
+	border:none;
+	padding:0;
+}
+
+table.tt_timetable .event {
+	text-align:center;
+	padding:0;
+	vertical-align:top;
+	
+	.event_container {
+		.bd(1px);
+	}
+	
+	&.tt_single_event {
+		.bd(1px);
+		
+		.event_container {
+			.bd(0);
+		}
+	}
+	
+	div {
+		text-align:inherit;
+		
+		&.tt_tooltip_content {
+			text-align:inherit;
+		}
+	}
+}
+
+.event_layout_3 table.tt_timetable .event {
+	text-align:left;
+	
+	.hours_container {
+		padding:12px 0 10px;
+	}
+}
+
+table.tt_timetable .event a,
+table.tt_timetable .event .event_header {
+	display:block;
+}
+
+table.tt_timetable .event .hours_container {
+	padding:17px 0 10px;
+}
+
+table.tt_timetable .event .top_hour {
+	padding-top:20px;
+}
+
+table.tt_timetable .event_hour_booking_wrapper.on_hover {
+	visibility:hidden;
+	.op(0);
+}
+
+table.tt_timetable .event:hover .event_hour_booking_wrapper.on_hover {
+	visibility:visible;
+	.op(1);
+}
+
+table.tt_timetable .event .bottom_hour {
+	padding-bottom:13px;
+}
+
+.tt_navigation_cell .tt_generate_pdf {
+	margin-bottom:20px;
+	
+	> * {
+		display:inline-block;
+		vertical-align:middle;
+	}
+	
+	textarea {
+		.dn;
+	}
+}
+
+.event_layout_4 table.tt_timetable .event .top_hour {
+	padding-top:13px;
+	padding-bottom:12px;
+}
+
+table.tt_timetable .event hr {
+	height:0;
+	margin:0;
+	opacity:0.2;
+	.bd(0);
+}
+
+.tt_timetable.small {
+	padding-top:30px;
+	
+	.available_slots {
+		margin-left:20px;
+		margin-top:3px;
+	}
+}
+
+.ui-tooltip.qtip {
+	margin-top:-40px;
+	z-index:999999 !important;
+}
+
+/* --- tip/tooltip/qtip --- */
+.tt_tooltip {
+	position:relative;
+}
+
+.tt_tooltip .tt_tooltip_text {
+	display:block;
+	width:100% !important;
+	max-width:100%;
+	height:auto !important;
+	padding-bottom:15px;
+	visibility:hidden;
+	position:absolute;
+	left:0 !important;
+	right:auto !important;
+	top:auto !important;
+	bottom:100% !important;
+	z-index:1000;
+	.op(0);
+}
+
+.tt_tooltip:hover .tt_tooltip_text {
+	visibility:visible;
+	.op(1);
+}
+
+.tt_tooltip .tt_tooltip_content {
+	padding:10px 15px 15px;
+}
+
+.tt_tooltip .tt_tooltip_content a {
+	margin-bottom:5px;
+}
+
+.tt_tooltip .tt_tooltip_arrow {
+	display:block;
+	.pos_abs(0, 0, 0, 0, auto, 10px);
+	.bdt(5px);
+	.bdl(5px);
+	.bdr(5px);
+	border-left-color:transparent !important;
+	border-right-color:transparent !important;
+}
+
+/* --- tabs --- */
+.tt-ui-tabs-hide {
+	display:none;
+}
+
+/* --- Timetable Small --- */
+ul.tt_items_list {
+	list-style:none;
+	padding:0 0 40px;
+	margin:0;
+	
+	&:last-child {
+		padding:0;
+	}
+	
+	li {
+		padding:10px 20px;
+		margin:10px 0 0;
+		.bd;
+		
+		&:before {
+			content:none;
+		}
+		
+		&:first-child {
+			margin-top:0;
+		}
+		
+		a, 
+		.available_slots {
+			.fl;
+		}
+		
+		.value {
+			.fr;
+			
+			.on_hover {
+				margin-right:15px;
+				.fl;
+			}
+		}
+	}
+}
+
+.tt_booking_overlay {
+	position:absolute;
+    background-color:rgba(85,85,85,0.2);
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:999998;
+}
+
+.tt_booking {
+    width:500px;
+    margin:0 50px;
+	position:absolute;
+    z-index:999999;
+	.bd;
+    .ovh;
+	.bdbx;
+    .tac;
+	
+	&.in_iframe {
+		margin:0 auto;
+	}
+	
+	&:empty {
+		.dn;
+	}
+	
+	> div {
+		.tac;
+	}
+	
+	.tt_booking_form  {
+		padding:30px 10px 0;
+		
+		.tt_field_wrapper {
+			&:not(.terms_checkbox_wrapper) {
+				padding-bottom:15px;
+				
+				label {
+					display:block;
+					padding:0 0 5px;
+				}
+				
+				textarea {
+					width:100%;
+				}
+				
+				@{input_text} {
+					width:100%;
+				}
+				
+				.tt_slots_number {
+					height:auto !important;
+				}
+				
+				.tt_slots_number_wrapper {
+					.tac;
+					
+					> input {
+						line-height:@input_height - 4px;
+						height:@input_height;
+						vertical-align:middle;
+						
+						&[type="button"] {
+							padding:0 25px;
+						}
+						
+						&[type="number"] {
+							display:block;
+							width:100%;
+							text-align:center;
+							margin:0 0 10px;
+						}
+					}
+				}
+			}
+			
+			&.terms_checkbox_wrapper {
+				> * {
+					display:inline-block;
+					vertical-align:middle;
+					
+					&.tt_field.tt_terms_checkbox {
+						margin-right:5px;
+					}
+				}
+			}
+		}
+	}
+
+	.tt_booking_message {
+		margin:40px 20px;
+		
+		p {
+			margin:33px 10px 0;
+			padding:0;
+		}
+		
+		> div {
+			margin:20px 10px 0;
+			
+			.tt_btn {
+				.default_button;
+				
+				&.book {
+					margin-right:20px;
+				}
+				
+				&.login {
+					margin:0 20px 0 0;
+					vertical-align:bottom;
+				}
+			}
+		}
+	}
+	
+	.event_details_wrapper {
+		padding:14px 13px 15px;
+		margin:0 10px;
+		.bd;
+	}
+	
+	.tt_btn_wrapper {
+		margin-top:35px;
+		
+		.tt_btn {
+			.default_button;
+		}
+	}
+	
+	.tt_preloader {
+		margin:50px auto 50px;
+		width:70px;
+		text-align:center;
+		
+		> div {
+			display:inline-block;
+			background-color:#E5E5E5;
+			width:18px;
+			height:18px;
+			-webkit-animation:sk-bouncedelay 1.4s infinite ease-in-out both;
+			animation:sk-bouncedelay 1.4s infinite ease-in-out both;
+			.bdrs(100%);
+		}
+		
+		.bounce1 {
+			-webkit-animation-delay:-0.32s;
+			animation-delay:-0.32s;
+		}
+		
+		.bounce2 {
+			-webkit-animation-delay:-0.16s;
+			animation-delay:-0.16s;
+		}
+	}
+	
+	.tt_hide {
+		.dn !important;
+	}
+}
+
+/*-------------------------------------------------------------------------*/
+/* Timetable Post
+/*-------------------------------------------------------------------------*/
+
+.cmsmasters_tt_single_event {
+	position:relative;
+}
+
+.cmsmasters_tt_event {
+	padding:60px 0 0;
+	position:relative;
+	
+	.cmsmasters_tt_event_header {
+		margin-top:-35px;
+		padding:0 0 15px;
+		.ovh;
+		.cl;
+		
+		.cmsmasters_tt_event_subtitle {
+			margin:0;
+			padding:0;
+			position:relative;
+		}
+	}
+	
+	.cmsmasters_tt_event_content_wrap {
+		padding-bottom:30px;
+		position:relative;
+		.ovh;
+		
+		&.with_sidebar {
+			width:74%;
+			padding-right:40px;
+			.fl;
+		}
+		
+		> figure {
+			margin-bottom:35px;
+		}
+	}
+	
+	.cmsmasters_tt_event_sidebar {
+		width:26%;
+		.fl;
+		
+		> div {
+			padding:0 0 40px;
+		}
+	}
+	
+	.cmsmasters_tt_event_hours {
+		position:relative;
+		.ovh;
+		
+		.cmsmasters_tt_event_hours_title {
+			margin:0;
+			padding:0 0 25px;
+		}
+		
+		.cmsmasters_tt_event_hours_item {
+			padding:9px 0;
+			position:relative;
+			.bdb(1px);
+			.ovh;
+			
+			> div {
+				width:50%;
+				.fl;
+				.ovh;
+			}
+			
+			.cmsmasters_tt_event_hours_item_title {
+				padding-right:15px;
+			}
+			
+			.cmsmasters_tt_event_hours_item_values {
+				word-wrap:break-word;
+				.tar;
+				
+				.cmsmasters_tt_event_hours_item_value {
+					display:block;
+				}
+			}
+		}
+	}
+	
+	.cmsmasters_tt_event_details {
+		position:relative;
+		.ovh;
+		
+		.cmsmasters_tt_event_details_title {
+			margin:0;
+			padding:0 0 25px;
+		}
+		
+		.cmsmasters_tt_event_details_item {
+			padding:9px 0;
+			position:relative;
+			.bdb(1px);
+			.ovh;
+			
+			> div {
+				width:50%;
+				.fl;
+				.ovh;
+			}
+			
+			.cmsmasters_tt_event_details_item_title {
+				padding-right:15px;
+			}
+			
+			.cmsmasters_tt_event_details_item_desc {
+				word-wrap:break-word;
+				.tar;
+			}
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------------------*/
+/* Timetable Upcoming Events
+/*-------------------------------------------------------------------------*/
+
+.tt_upcoming_events_widget {
+	position:relative;
+	.ovh;
+}
+
+.tt_upcoming_events_wrapper {
+	width:100%;
+	.cl;
+	
+	.caroufredsel_wrapper {
+		width:100% !important;
+		margin:0 !important;
+		.ovh;
+	}
+	
+	.tt_upcoming_event_controls {
+		display:block;
+		margin:0 -2px;
+		position:relative;
+		.ovh;
+		
+		> a {
+			display:block !important;
+			width:28px;
+			height:28px;
+			margin:4px 2px 0;
+			position:relative;
+			.bd(1px);
+			.fl;
+			.bdrs(50%);
+			
+			&:before {
+				font-family:"fontello";
+				font-size:16px;
+				.pos_abs(1em, 1em, 0, 0, -1px);
+				.tac;
+			}
+			
+			&#upcoming_event_prev:before {
+				content:'\e9d1';
+			}
+			
+			&#upcoming_event_next:before {
+				content:'\e9ce';
+			}
+		}
+	}
+}
+
+ul.tt_upcoming_events {
+	width:100% !important;
+	padding:0;
+	margin:0;
+	
+	li {
+		padding:0 0 6px;
+		margin:0;
+		
+		&:before {
+			content:none;
+		}
+		
+		.tt_upcoming_events_event_container {
+			display:block;
+			padding:15px 45px 15px 20px;
+			.bd(1px);
+			.ovh;
+			
+			&:before {
+				content:'\e9ce';
+				font-family:"fontello";
+				font-size:18px;
+				.pos_abs(1em, 1em, auto, 15px, 20px, auto);
+				.tac;
+			}
+			
+			&:hover {
+				&:before {
+					content:'\e9d1';
+				}
+				
+				.tt_event_hours_description, 
+				img.wp-post-image {
+					display:block;
+				}
+			}
+			
+			.tt_upcoming_events_arrow {
+				.dn;
+			}
+			
+			.tt_upcoming_events_hours {
+				display:block;
+			}
+			
+			.tt_event_hours_description {
+				padding:13px 0 0;
+				.dn;
+			}
+			
+			img.wp-post-image {
+				margin-top:20px;
+				margin-bottom:5px;
+				.dn;
+			}
+		}
+	}
+}
+
+
+/*-------------------------------------------------------------------------*/
+/* CSS3 Animations
+/*-------------------------------------------------------------------------*/
+
+html.csstransitions {
+	.tabs_box_navigation .tabs_box_navigation_selected {
+		.trans(~'border-radius .3s ease-in-out');
+	}
+	
+	.tabs_box_navigation .tabs_box_navigation_selected:before {
+		.trans(~'all .3s ease-in-out');
+	}
+	
+	.tabs_box_navigation .tabs_box_navigation_selected .sub-menu, 
+	.tt_timetable.small .tt_items_list li .on_hover,
+	table.tt_timetable .tt_tooltip .tt_tooltip_text,
+	table.tt_timetable .event_hour_booking_wrapper.on_hover {
+		.trans(~'opacity .3s ease-in-out, visibility .3s ease-in-out');
+	}
+	
+	table.tt_timetable .tt_tooltip:hover .tt_tooltip_text {
+		.trans(~'opacity .3s ease-in-out .2s, visibility .3s ease-in-out .2s');
+	}
+	
+	table.tt_timetable .event_container, 
+	table.tt_timetable .tt_single_event,
+	.tt_booking .tt_booking_message > div .tt_btn,
+	.cmsmasters_timetable_shortcode .tabs_box_navigation .tabs_box_navigation_selected {
+		.trans(~'background-color .3s ease-in-out');
+	}
+	
+	.tt_timetable.small .tt_items_list li {
+		.trans(~'background-color .3s ease-in-out, border-color .3s ease-in-out');
+	}
+	
+	.tt_timetable.small .tt_items_list li *,
+	table.tt_timetable .event_container *, 
+	.tt_tabs_navigation li a,
+	.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a:before {
+		.trans(~'color .3s ease-in-out');
+	}
+	
+	table.tt_timetable .event_container a, 
+	table.tt_timetable .tt_single_event a {
+		.trans(~'color .3s ease-in-out, opacity .3s ease-in-out');
+	}
+	
+	.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a {
+		.trans(~'border-color .3s ease-in-out, background .3s ease-in-out');
+	}
+	
+	ul.tt_upcoming_events li .tt_upcoming_events_event_container {
+		.trans(~'none');
+	}
+	
+	.tt_tabs_navigation li:before {
+		.trans(~'background-color .4s ease-in-out, width .3s ease-in-out, left .3s ease-in-out, right .3s ease-in-out');
+	}
+	
+	.tt_tabs_navigation li a:before,
+	.tt_tabs_navigation li a:after {
+		.trans(~'height .3s ease-in-out');
+	}
+}
+
+@-webkit-keyframes sk-bouncedelay
+{
+	0%, 80%, 100%
+	{
+		-webkit-transform:scale(0);	
+	}
+	40%
+	{
+		-webkit-transform:scale(1.0);
+	}
+}
+
+@keyframes sk-bouncedelay
+{
+	0%, 80%, 100%
+	{ 
+		-webkit-transform:scale(0);
+		transform:scale(0);
+	}	
+	40%
+	{ 
+		-webkit-transform:scale(1.0);
+		transform:scale(1.0);
+	}
+}

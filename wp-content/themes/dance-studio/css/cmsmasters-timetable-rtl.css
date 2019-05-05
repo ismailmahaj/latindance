@@ -1,0 +1,202 @@
+/**
+ * @package 	WordPress
+ * @subpackage 	Dance Studio
+ * @version 	1.0.0
+ * 
+ * Timetable RTL Rules
+ * Created by CMSMasters
+ * 
+ */
+
+.tabs_box_navigation .tabs_box_navigation_selected:before {
+	left: 15px;
+	right: auto;
+}
+
+.tabs_box_navigation .tabs_box_navigation_selected:hover {
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+}
+
+.tabs_box_navigation .tabs_box_navigation_selected label {
+	padding-left: 40px;
+	padding-right: 20px;
+}
+
+.tabs_box_navigation .tabs_box_navigation_selected .sub-menu {
+	left: auto;
+	right: 0;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+
+.tt_tabs_navigation {
+	float: none;
+}
+
+.tt_tabs_navigation:before {
+	left: auto;
+	right: 0;
+}
+
+.tt_tabs_navigation li {
+	margin-right: 2px;
+	float: right;
+}
+
+.tt_tabs_navigation li:first-child {
+	margin-right: 0;
+}
+
+.tt_tabs_navigation li:before {
+	left: auto;
+	right: 50%;
+}
+
+.tt_tabs_navigation li > a:before {
+	left: auto;
+	right: 0;
+}
+
+.tt_tabs_navigation li > a:after {
+	right: auto;
+	left: 0;
+}
+
+.tt_tabs_navigation li:hover:before,
+.tt_tabs_navigation li.ui-tabs-active:before {
+	left: auto;
+	right: 0;
+}
+/*-------------------------------------------------------------------------*/
+/*	2. Timetable Page */
+/*-------------------------------------------------------------------------*/
+
+table.tt_timetable th,
+table.tt_timetable td.tt_hours_column {
+	text-align: center;
+}
+
+table.tt_timetable .event {
+	text-align: center;
+}
+
+table.tt_timetable .event div {
+	text-align: inherit;
+}
+
+table.tt_timetable .event div.tt_tooltip_content {
+	text-align: inherit;
+}
+
+.event_layout_3 table.tt_timetable .event {
+	text-align: right;
+}
+
+.tt_tooltip .tt_tooltip_text {
+	left: auto;
+	right: 0;
+}
+
+.tt_tooltip .tt_tooltip_arrow {
+	left: 0;
+	right: 0;
+}
+
+ul.tt_items_list li a,
+ul.tt_items_list li span {
+	float: right;
+}
+
+ul.tt_items_list li .value {
+	float: left;
+}
+
+/*-------------------------------------------------------------------------*/
+/*	3. Timetable Post */
+/*-------------------------------------------------------------------------*/
+
+.cmsmasters_tt_event .cmsmasters_tt_event_content_wrap.with_sidebar {
+	padding-left: 40px;
+	float: right;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_sidebar {
+	float: right;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item > div {
+	float: right;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item .cmsmasters_tt_event_hours_item_title {
+	padding-left: 15px;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_hours .cmsmasters_tt_event_hours_item .cmsmasters_tt_event_hours_item_values {
+	text-align: left;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item > div {
+	float: right;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item .cmsmasters_tt_event_details_item_title {
+	padding-left: 15px;
+}
+
+.cmsmasters_tt_event .cmsmasters_tt_event_details .cmsmasters_tt_event_details_item .cmsmasters_tt_event_details_item_desc {
+	text-align: left;
+}
+
+/*-------------------------------------------------------------------------*/
+/*	4. Timetable Upcoming Events */
+/*-------------------------------------------------------------------------*/
+
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a {
+	float: right;
+}
+
+.tt_upcoming_events_wrapper .tt_upcoming_event_controls > a:before {
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+ul.tt_upcoming_events li .tt_upcoming_events_event_container {
+	padding-left: 45px;
+	padding-right: 20px;
+}
+
+ul.tt_upcoming_events li .tt_upcoming_events_event_container:before {
+	left: 15px;
+	right: auto;
+	text-align: center;
+}
+
+/*-------------------------------------------------------------------------*/
+/*	5. CSS3 Animations */
+/*-------------------------------------------------------------------------*/
+
+html.csstransitions .tt_tabs_navigation li:before {
+	-webkit-transition: background-color .4s ease-in-out, width .3s ease-in-out, right .3s ease-in-out, left .3s ease-in-out;
+	-moz-transition: background-color .4s ease-in-out, width .3s ease-in-out, right .3s ease-in-out, left .3s ease-in-out;
+	-ms-transition: background-color .4s ease-in-out, width .3s ease-in-out, right .3s ease-in-out, left .3s ease-in-out;
+	-o-transition: background-color .4s ease-in-out, width .3s ease-in-out, right .3s ease-in-out, left .3s ease-in-out;
+	transition: background-color .4s ease-in-out, width .3s ease-in-out, right .3s ease-in-out, left .3s ease-in-out;
+}
+
+@media only screen and (max-width: 950px) {
+  .cmsmasters_tt_event .cmsmasters_tt_event_content_wrap.with_sidebar {
+    float: none;
+    clear: both;
+    padding-left: 0;
+  }
+  .cmsmasters_tt_event .cmsmasters_tt_event_sidebar {
+    float: none;
+    clear: both;
+  }
+}
+
